@@ -5,9 +5,13 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\AgenceBRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *      normalizationContext={"groups"={"agenceB:read"}},
+ *      denormalizationContext={"groups"={"agenceB:write"}}
+ * )
  * @ORM\Entity(repositoryClass=AgenceBRepository::class)
  */
 class AgenceB
@@ -16,31 +20,43 @@ class AgenceB
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * 
+     * @Groups("agenceB:read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * 
+     * @Groups({"agenceB:read", "agenceB:write"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * 
+     * @Groups({"agenceB:read", "agenceB:write"})
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * 
+     * @Groups({"agenceB:read", "agenceB:write"})
      */
     private $entreprise;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * 
+     * @Groups({"agenceB:read", "agenceB:write"})
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
+     * 
+     * @Groups({"agenceB:read", "agenceB:write"})
      */
     private $tel;
 
