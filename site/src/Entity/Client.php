@@ -5,13 +5,8 @@ namespace App\Entity;
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ClientRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(
- *      normalizationContext={"groups"={"client:read"}},
- *      denormalizationContext={"groups"={"client:write"}}
- * )
  * @ORM\Entity(repositoryClass=ClientRepository::class)
  */
 class Client
@@ -20,57 +15,41 @@ class Client
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * 
-     * @Groups("client:read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * 
-     * @Groups({"client:read", "client:write"})
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $adresse;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $mail;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $tel;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $numeroClient;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $numeroFacture;
 

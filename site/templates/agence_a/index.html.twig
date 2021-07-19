@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Agence A{% endblock %}
+
+{% block body %}
+    <h1>Agence A</h1>
+        <div class="container">
+            <div class="row">
+                {% for agenceA in agenceA %}
+                    <div class="col-12 col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <img src="https://picsum.photos/200/100" class="Hero-new"/>
+                                    <p>Nom : {{ agenceA.nom }}</p>
+                                    <p>Prénom : {{ agenceA.prenom }}</p>
+                                    <p>Entreprise : {{ agenceA.entreprise }}</p>
+                                    <p>Email : {{ agenceA.email }}</p>
+                                    <p>Tel : {{ agenceA.tel }}</p>
+                                </div>
+                            </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

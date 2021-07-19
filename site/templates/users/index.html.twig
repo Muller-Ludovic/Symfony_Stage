@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+    <h1>Users</h1>
+        <h2>Pour contacter les administrateurs :</h2>
+        <div class="container-fluid">
+            <div class="row">
+                {% for users in users %}
+                    <div class="col-12 col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <img src="https://picsum.photos/200/100" class="Hero-new"/>
+                                    <p>Prénom : {{ users.username }}</p>
+                                    <p>Nom : {{ users.name}}</p>
+                                    <p>Email : {{ users.email }}</p>
+                                </div>
+                            </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clients{% endblock %}
+
+{% block body %}
+    <h1>Clients</h1>
+        <div class="container">
+            <div class="row">
+                {% for clients in clients %}
+                    <div class="col-12 col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <img src="https://picsum.photos/200/100" class="Hero-new"/>
+                                    <p>Nom : {{ clients.nom }}</p>
+                                    <p>Prénom : {{ clients.prenom }}</p>
+                                    <p>Adresse : {{ clients.adresse }}</p>
+                                    <p>Email : {{ clients.mail }}</p>
+                                    <p>Tel : {{ clients.tel }}</p>
+                                    <p>Numéro Client : {{ clients.numeroClient }}</p>
+                                    <p>Numéro Facture : {{ clients.numeroFacture }}</p>
+                                </div>
+                            </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

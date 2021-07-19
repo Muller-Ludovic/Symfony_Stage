@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil API 1{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue sur l'application API 1</h1>
+
+    <div class="Hero">
+        <img src="https://picsum.photos/1920/1080" class="Hero-img" />
+        <div class="Hero-overlay"></div>
+        <div class="Hero-content">
+            <h1>API 1</h1>
+            <p>API 1 qui permet le CRUD (Create, Remove, Update, Delete) et la consultation du personnel de plusieurs agences A, B, C, user, articles et comments sous Symfony avec API PLATFORM.</p>
+            <p>Cliquez sur le bouton pour accéder à l'API 1</p>
+            <p><a href="/api" target="_blank" class="btn btn-danger">API 1</a></p>
+            <p>Ou pour accéder à l'accueil de l'API 2</p>
+            <p><a href="http://api2.local/" class="btn btn-primary">Accueil API 2</a></p>
+        </div>
+    </div>
+{% endblock %}

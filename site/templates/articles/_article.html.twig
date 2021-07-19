@@ -1,0 +1,18 @@
+<div class="card mb-4">
+    <div class="card-header">
+    <img src="https://picsum.photos/200/100" class="Hero-new"/>
+        <h2>{{ articles.title }}</h2>
+        <small>{{ articles.createdAt|date('d/m/Y') }}</small>
+    </div>
+    <div class="card-body">
+        {{ articles.content|u.truncate(200, '...') }}
+    </div>
+    <div class="card-footer">
+        <a href="{{ path('articles_show', {id: articles.id}) }}" class="btn btn-link">Lire la suite</a><hr>
+        {% for comments in articles.comments %}
+            <div>
+            <p>{{ comments.content }} </p><small>{{ comments.createdAt|date('d/m/Y') }}</small>
+            </div>
+        {% endfor %}
+    </div>
+</div>

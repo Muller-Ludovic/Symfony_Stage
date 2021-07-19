@@ -1,0 +1,12 @@
+# protection de la lecture des répertoires
+Options All -Indexes
+
+# active le moteur de réécriture apache
+RewriteEngine on
+
+# livrer le dossier ou le fichier directement s'il existe sur le serveur
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+ 
+# poussez chaque requête vers index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

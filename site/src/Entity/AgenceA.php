@@ -3,32 +3,28 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
-use App\Repository\ClientRepository;
+use App\Repository\AgenceARepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(
- *      normalizationContext={"groups"={"client:read"}},
- *      denormalizationContext={"groups"={"client:write"}}
- * )
- * @ORM\Entity(repositoryClass=ClientRepository::class)
+ * @ORM\Entity(repositoryClass=AgenceARepository::class)
  */
-class Client
+class AgenceA
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * 
-     * @Groups("client:read")
+     * @Groups("agenceA:read")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      * 
-     * @Groups({"client:read", "client:write"})
+     * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $nom;
 
@@ -40,18 +36,18 @@ class Client
     private $prenom;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50, nullable=true)
      * 
      * @Groups({"agenceA:read", "agenceA:write"})
      */
-    private $adresse;
+    private $Entreprise;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * 
      * @Groups({"agenceA:read", "agenceA:write"})
      */
-    private $mail;
+    private $email;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
@@ -59,20 +55,6 @@ class Client
      * @Groups({"agenceA:read", "agenceA:write"})
      */
     private $tel;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
-     */
-    private $numeroClient;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     * 
-     * @Groups({"agenceA:read", "agenceA:write"})
-     */
-    private $numeroFacture;
 
     public function getId(): ?int
     {
@@ -103,26 +85,26 @@ class Client
         return $this;
     }
 
-    public function getAdresse(): ?string
+    public function getEntreprise(): ?string
     {
-        return $this->adresse;
+        return $this->Entreprise;
     }
 
-    public function setAdresse(?string $adresse): self
+    public function setEntreprise(?string $Entreprise): self
     {
-        $this->adresse = $adresse;
+        $this->Entreprise = $Entreprise;
 
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getEmail(): ?string
     {
-        return $this->mail;
+        return $this->email;
     }
 
-    public function setMail(?string $mail): self
+    public function setEmail(?string $email): self
     {
-        $this->mail = $mail;
+        $this->email = $email;
 
         return $this;
     }
@@ -135,30 +117,6 @@ class Client
     public function setTel(?string $tel): self
     {
         $this->tel = $tel;
-
-        return $this;
-    }
-
-    public function getNumeroClient(): ?string
-    {
-        return $this->numeroClient;
-    }
-
-    public function setNumeroClient(?string $numeroClient): self
-    {
-        $this->numeroClient = $numeroClient;
-
-        return $this;
-    }
-
-    public function getNumeroFacture(): ?string
-    {
-        return $this->numeroFacture;
-    }
-
-    public function setNumeroFacture(?string $numeroFacture): self
-    {
-        $this->numeroFacture = $numeroFacture;
 
         return $this;
     }
