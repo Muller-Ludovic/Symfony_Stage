@@ -1,3 +1,82 @@
+body, html {
+    overflow-x: hidden;
+    height: auto !important;
+    background-image: url('/image/img-stage.jpg');
+  }
+
+body {
+    position: relative !important;
+  }
+
+h1, h2 {
+    margin-left: 10px;
+    color: white;
+}
+
+.h1 {
+    font-weight: bold;
+}
+
+.p-articles {
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+small {
+    color: white;
+}
+
+.navbar-nav {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    color: white !important;
+  }
+  
+  .navbar .nav-item:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  .navbar-toggler {
+      color: white;
+  }
+
+  .dropdown-item {
+    font-size: 15px;
+    font-weight: bold !important;
+  }
+  
+  .dropdown-toggle::after {
+     transition: transform 0.15s linear; 
+  }
+  
+  .show.dropdown .dropdown-toggle::after {
+    transform: translateY(3px);
+  }
+  
+  .dropdown-menu {
+    margin-top: 5px;
+  }
+  
+  .dropdown>.dropdown-menu {
+    top: 80%;
+    transition: 0.3s all ease-in-out;
+  }
+  .dropdown:hover>.dropdown-menu {
+    display: block;
+    top: 80%;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+      pointer-events: none;
+  }
+
 .Hero{
     height: 100vh;
     overflow: hidden;
@@ -26,11 +105,23 @@
     height: 100%;
 }
 
-h1, h2 {
-    margin-left: 10px;
-}
-
 .Hero-new {
     width: 100%;
     margin: 0 auto;
 }
+
+#scrollUp {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 50%;
+    transform: translateY(-20px);
+    border: 2px solid royalblue;
+    background-color: white;
+  }
+
+  #scrollUp a{
+    text-decoration: none;
+  }
