@@ -8,7 +8,7 @@
         {{ articles.content|u.truncate(200, '...') }}
     </div>
     <div class="card-footer">
-        <a href="{{ path('articles_show', {id: articles.id}) }}" class="btn btn-link">Lire la suite</a><hr>
+        <a href="{{ path('articles_show', {id: articles.id}) }}" class="btn btn-link red">Lire la suite</a><hr>
         {% for comments in articles.comments %}
             <div>
             <p>{{ comments.content }} </p><small class="black">{{ comments.createdAt|date('d/m/Y') }}</small>

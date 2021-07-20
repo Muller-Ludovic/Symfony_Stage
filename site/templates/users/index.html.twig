@@ -12,13 +12,32 @@
                             <div class="card mb-4">
                                 <div class="card-header">
                                     <img src="https://picsum.photos/200/100" class="Hero-new"/>
-                                    <p>Prénom : {{ users.username }}</p>
-                                    <p>Nom : {{ users.name}}</p>
-                                    <p>Email : {{ users.email }}</p>
+                                    <p><span class="bold"> Prénom : </span>{{ users.username }}</p>
+                                    <p><span class="bold"> Nom : </span>{{ users.name}}</p>
+                                    <p><span class="bold"> Email : </span>{{ users.email }}</p>
                                 </div>
                             </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
+<div class="container-fluid">
+  <div class="divh2"><h2>Nous situer :</h2></div>
+  <hr>
+  <div class="row text-center justify-content-center">
+    <div class="card text-center justify-content-center col-6">
+      <div class="card-body">
+        <h5 class="card-title"><strong>M-Énergies</strong></h5>
+        <p class="card-text">96 Impasse Pierre et Marie Curie</p>
+        <p>54714 LUDRES</p>
+        <p>Tél : <span>03 83 26 13 13</span></p>
+        <a class="spantel" href="https://m-energies.fr/" target="_bank">www.m-energies.fr</a>
+      </div>
+      <div class="card-foot">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10550.325339079867!2d6.181785!3d48.6178567!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x581ec4b3b4712e89!2sM-ENERGIES%20SAS!5e0!3m2!1sfr!2sfr!4v1626803787327!5m2!1sfr!2sfr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

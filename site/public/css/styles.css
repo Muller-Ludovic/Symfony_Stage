@@ -22,11 +22,19 @@ h1, h2 {
 }
 
 .black {
-    color: black;
+    color: white;
+}
+
+.red {
+  color: red !important;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 small {
-    color: white;
+    color: white !important;
 }
 
 .navbar-nav {
@@ -124,4 +132,41 @@ small {
 
   #scrollUp a{
     text-decoration: none;
+  }
+
+  #scrollUp:hover {
+    color: white;
+    background-color: royalblue;
+    box-shadow: 2px 2px 20px white;
+  }
+
+  #scrollUp:hover  a{
+    color: white;
+  }
+
+  .card {
+    color: white;
+    background-color: rgba(157, 191, 255, 0.712);
+  }
+
+  .card small {
+    color: white !important;
+  }
+
+  .card:hover {
+    box-shadow: 10px 10px 1px royalblue;
+    background-color: white;
+    color: black !important;
+  }
+
+  .card:hover h2{
+    color: black !important;
+  }
+
+  .card:hover small{
+    color: black !important;
+  }
+
+  .spantel {
+    color: red !important;
   }
