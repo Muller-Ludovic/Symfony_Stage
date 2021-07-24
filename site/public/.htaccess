@@ -10,3 +10,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
  
 # poussez chaque requête vers index.php
 RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Authorization  header
+
+RewriteCond %{HTTP:Authorization} ^(.*)
+
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
